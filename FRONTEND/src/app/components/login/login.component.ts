@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginForm: FormGroup = new FormGroup({});
 
+  ngOnInit(): void {
+    this.loginForm = this.createFormGroup();
+  }
+
+  createFormGroup(): FormGroup{
+    return new FormGroup({
+      name: new FormControl("", [Validators.required, Validators.minLength(3)]),
+      password: new FormControl("", [Validators.required, Validators.minLength(6)])
+    })
+  }
+
+  login() : void {
+    //this.authService.login({ name: this.loginForm.value.name, password: this.loginForm.value.password }).subscribe((message => console.log(message)));
+  }
 }

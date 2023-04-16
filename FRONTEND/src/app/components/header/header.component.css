@@ -36,7 +36,7 @@
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 1px;
-    color: #eee;
+    color: #fff;
     text-transform: uppercase;
     transition: all 0.3s;
 }
@@ -44,6 +44,7 @@
 .nav-bar-link:hover, .nav-bar-link:active, .nav-bar-link.active{
     color: #e93131;
 }  
+
 .btn--nav{
     border-radius: 30px;
     padding: 1.4rem 3.2rem;
