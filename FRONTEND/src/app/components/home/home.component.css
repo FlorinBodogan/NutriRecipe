@@ -7,7 +7,7 @@
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.637)), url("/assets/img/foodhome.jpg");
   background-size: cover;
   background-position: center center;
-  z-index: 3;
+  z-index: 1;
 }
 
 .home-container{
@@ -19,18 +19,8 @@
   z-index: 9999;
 }
 
-.hero-section{
-  z-index: -1;
-}
-
 .hero-text-box{
   color: #eee;
-  z-index: 9999;
-}
-
-.name{
-  color: #e93131;
-  z-index: 9999;
 }
 
 .heading-primary--hero{
@@ -38,7 +28,6 @@
   color: #e6e3e3;
   display: flex;
   gap: 1rem;
-  z-index: 9999;
   animation: fadeFromTop 1.2s;
 }
 
@@ -47,6 +36,7 @@
   margin-bottom: 2.4rem;
   font-size: 2.4rem;
   color: #e93131;
+  animation: fadeIn 3s;
 }
 
 @keyframes fadeFromTop{
@@ -66,7 +56,6 @@
   font-size: 2.4rem;
   line-height: 1.6rem;
   margin-bottom: 4.8rem;
-  z-index: 9999;
   animation: fadeIn 3s;
 }
 
@@ -95,5 +84,153 @@
   to{
       opacity: 1;
       transform: translate(0);
+  }
+}
+
+/***********************************************************************************/
+/* ------------------ MEDIA QUERIES ---------------------------------------------- */
+/***********************************************************************************/
+
+/******************************/
+/* ----- Bellow 1140px ---- */
+/******************************/
+
+@media(max-width:71.25em){
+  .home-container{
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-30%, -50%);
+    text-align: center;
+    z-index: 9999;
+  }
+}
+
+/******************************/
+/* ----- Bellow 948px ---- */
+/******************************/
+
+@media(max-width:59.25em){
+  .home-container{
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    text-align: center;
+    z-index: 9999;
+  }
+}
+
+/******************************/
+/* ----- Bellow 812px ---- */
+/******************************/
+
+@media(max-width:50.75em){
+  .heading-primary--hero{
+    font-size: 4.8rem;
+  }
+
+  .heading-tertiary--hero{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .hero-text{
+    font-size: 2rem;
+    line-height: 1.6rem;
+    margin-bottom: 4rem;
+  }
+}
+
+/******************************/
+/* ----- Bellow 610px ---- */
+/******************************/
+
+@media(max-width:38.125em){
+  .heading-primary--hero{
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary--hero{
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .hero-text{
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+/******************************/
+/* ----- Bellow 454px ---- */
+/******************************/
+
+@media(max-width:28.135em){
+  .heading-primary--hero{
+    font-size: 3rem;
+  }
+
+  .heading-tertiary--hero{
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .hero-text{
+    display: none;
+  }
+
+  .btn--home{
+    font-size: 1.6rem;
+    padding: 1.4rem 3.2rem;
+  }
+}
+
+/******************************/
+/* ----- Bellow 378px ---- */
+/******************************/
+
+@media(max-width:23.625em){
+  .heading-primary--hero{
+    font-size: 2.4rem;
+  }
+
+  .heading-tertiary--hero{
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .hero-text{
+    display: none;
+  }
+
+  .btn--home{
+    font-size: 1.2rem;
+    padding: 1.2rem 2.4rem;
+  }
+}
+
+/******************************/
+/* ----- Bellow 298px ---- */
+/******************************/
+
+@media(max-width:18.625em){
+  .heading-primary--hero{
+    font-size: 2rem;
+  }
+
+  .heading-tertiary--hero{
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .hero-text{
+    display: none;
+  }
+
+  .btn--home{
+    font-size: 1rem;
+    padding: 1.2rem 2rem;
   }
 }

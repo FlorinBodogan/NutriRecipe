@@ -1,20 +1,20 @@
-<header>
+<header [class.sticky]="sticky" [ngClass]="menuClass">
     <div class="nav container">
         <div class="nav-bar">
-            <div class="logo">
+            <div class="logo" routerLink="/home">
                 <img class="logo-img" src="assets/img/logo.png">
             </div>
             <ul class="nav-bar-list">
-                <li class="nav-bar-link" routerLink="/home" routerLinkActive="active">Home</li>
-                <li class="nav-bar-link" routerLink="/about" routerLinkActive="active">About</li>
-                <li class="nav-bar-link" routerLink="/register" routerLinkActive="active">Register</li>
-                <li class="nav-bar-link" routerLink="/login" routerLinkActive="active">Login</li>
+                <li (click)="selectPage()"><a class="nav-bar-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li (click)="selectPage()"><a class="nav-bar-link" routerLink="/about" routerLinkActive="active">About</a></li>
+                <li (click)="selectPage()"><a class="nav-bar-link" routerLink="/register" routerLinkActive="active">Register</a></li>
+                <li (click)="selectPage()"><a class="nav-bar-link" routerLink="/login" routerLinkActive="active">Login</a></li>
                 <li><a  routerLink="/about" class="btn btn--nav">Make Recipe</a></li>
             </ul>
+            <button class="btn-mobile-nav" (click)="toggleMenu()">
+              <fa-icon [icon]="isMenuOpen ? faToggleOff : faToggleOn" name="menu-outline" class="icon"></fa-icon>
+              <fa-icon [icon]="isMenuOpen ? faToggleOn : faToggleOff" name="close-outline" class="icon"></fa-icon>
+            </button>
         </div>
-        <button class="btn-mobile-nav" (click)="toggleMenu()">
-          <fa-icon [icon]="isMenuOpen ? faToggleOff : faToggleOn" name="menu-outline" class="icon"></fa-icon>
-          <fa-icon [icon]="isMenuOpen ? faToggleOn : faToggleOff" name="close-outline" class="icon"></fa-icon>
-      </button>
     </div>
 </header>

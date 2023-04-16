@@ -17,8 +17,19 @@ export class HeaderComponent {
   }
 
   public isMenuOpen: boolean = false;
+  public menuClass: string = "";
 
   public toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      this.menuClass = "nav-open"; 
+    } else {
+      this.menuClass = ""; 
+    }
+  }
+  
+  public selectPage(): void {
+    this.isMenuOpen = false;
+    this.menuClass = "";
   }
 }
