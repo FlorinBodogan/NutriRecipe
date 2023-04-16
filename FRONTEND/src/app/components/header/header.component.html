@@ -2,17 +2,19 @@
     <div class="nav container">
         <div class="nav-bar">
             <div class="logo">
-                LOGO
+                <img class="logo-img" src="assets/img/logo.png">
             </div>
             <ul class="nav-bar-list">
-                <li class="nav-bar-link">Home</li>
-                <li class="nav-bar-link">About</li>
-                <li class="nav-bar-link">Register</li>
-                <li class="nav-bar-link">Login</li>
+                <li class="nav-bar-link" routerLink="/home" routerLinkActive="active">Home</li>
+                <li class="nav-bar-link" routerLink="/about" routerLinkActive="active">About</li>
+                <li class="nav-bar-link" routerLink="/register" routerLinkActive="active">Register</li>
+                <li class="nav-bar-link" routerLink="/login" routerLinkActive="active">Login</li>
+                <li><a  routerLink="/about" class="btn btn--nav">Make Recipe</a></li>
             </ul>
         </div>
-        <div class="nav-bar-mobile">
-            
-        </div>
+        <button class="btn-mobile-nav" (click)="toggleMenu()">
+          <fa-icon [icon]="isMenuOpen ? faToggleOff : faToggleOn" name="menu-outline" class="icon"></fa-icon>
+          <fa-icon [icon]="isMenuOpen ? faToggleOn : faToggleOff" name="close-outline" class="icon"></fa-icon>
+      </button>
     </div>
 </header>
