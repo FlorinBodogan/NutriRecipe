@@ -17,6 +17,7 @@ export class HeaderComponent {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
     this.sticky = window.pageYOffset >= 1;
+    console.log(this.sticky);
   }
 
   public isMenuOpen: boolean = false;
@@ -36,7 +37,7 @@ export class HeaderComponent {
     this.menuClass = "";
   }
 
-  //-------------------------------
+  //auth
   isAuthenticated = false;
 
   constructor(private authService: AuthService, private router: Router){}

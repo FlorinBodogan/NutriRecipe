@@ -6,14 +6,20 @@
     width: 100vw;
     display: flex;
     align-items: center;
+    overflow-y: hidden;
     justify-content: center;
     background-image: url("/assets/img/foodregister.jpg");
 }
 
 .register-box{
     width: 30vw;
-    padding-top: 15vh;
-    padding-bottom: 5vh;
+    padding-top: 20vh;
+    padding-bottom: 7vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     animation: fadeIn 3s;
 }
 
@@ -106,6 +112,21 @@
         width: 40vw;
     }
 }
+
+/******************************/
+/* ----- Bellow 650px ---- */
+/******************************/
+
+/* @media(max-width:43.125em){
+    .register-section{
+        height: 100vh;
+    }
+
+    .register-box{
+        width: 40vw;
+        padding: 0;
+    }
+} */
 
 /******************************/
 /* ----- Bellow 600px ---- */
