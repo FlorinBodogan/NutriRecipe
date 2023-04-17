@@ -3,12 +3,21 @@
       <section class="hero-section">
           <div class="home-container">
               <div class="hero-text-box">
-                  <h3 class="heading-tertiary heading-tertiary--hero">- We Provide</h3>
-                  <h1 class="heading-primary heading-primary--hero">The Perfect Recipe Manager</h1>
-                  <p class="hero-text">
+                  <h3 class="heading-tertiary heading-tertiary--hero" *ngIf="!isAuthenticated">- We Provide</h3>
+                  <h1 class="heading-primary heading-primary--hero" *ngIf="!isAuthenticated">The Perfect Recipe Manager</h1>
+                  <p class="hero-text" *ngIf="!isAuthenticated">
                     Make your own recipe, we value your wishes.
                   </p>
-                  <a routerLink="/about" class="btn btn--home">About</a>
+                  <a routerLink="/about" class="btn btn--home" *ngIf="!isAuthenticated">About</a>
+
+                  <h3 class="heading-tertiary heading-tertiary--hero" *ngIf="isAuthenticated"></h3>
+                  <div *ngFor="let user of userInfo$ | async"> 
+                    <h1 class="heading-primary heading-primary--hero" *ngIf="isAuthenticated">Welcome back, {{user.name}}!</h1>
+                  </div>
+                  <p class="hero-text" *ngIf="isAuthenticated">
+                    Let's go back to recipes 
+                  </p>
+                  <a routerLink="/recipes" class="btn btn--home" *ngIf="isAuthenticated">Recipes</a>
               </div>
           </div>
       </section>

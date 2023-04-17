@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,11 @@ import { AboutComponent } from './components/about/about.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, 
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

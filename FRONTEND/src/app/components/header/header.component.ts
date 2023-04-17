@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
-import { faBars, faXmark} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,7 @@ export class HeaderComponent {
   sticky: boolean = false;
   faToggleOn = faBars;
   faToggleOff = faXmark;
+  faRightFromBracket = faRightFromBracket;
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
@@ -31,5 +34,22 @@ export class HeaderComponent {
   public selectPage(): void {
     this.isMenuOpen = false;
     this.menuClass = "";
+  }
+
+  //-------------------------------
+  isAuthenticated = false;
+
+  constructor(private authService: AuthService, private router: Router){}
+
+  ngOnInit(): void {
+    this.authService.isUserLogged$.subscribe((isLogged) => {
+      this.isAuthenticated = isLogged;
+    })
+  }
+
+  logout(): void{
+    localStorage.removeItem("token");
+    this.authService.isUserLogged$.next(false);
+    this.router.navigate(["home"]);
   }
 }
