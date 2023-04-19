@@ -61,7 +61,7 @@ exports.login = async (req, res, next) => {
           userId: retainedUser.id,
         },
         'secretWebToken',
-        { expiresIn: '10d' }
+        { expiresIn: '7d' }
       );
       res.status(200).json({ token: jsontoken, userId: retainedUser.id, name:retainedUser.name });
     } catch (e) {

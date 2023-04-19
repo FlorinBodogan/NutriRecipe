@@ -8,11 +8,19 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
 
+  //check JWT Expire DATE
+  isTokenExpired(token: string): boolean {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const expirationTime = payload.exp * 1000; // convert seconds to milliseconds
+    const now = Date.now();
+    return now > expirationTime;
+  }
+
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
     const checkLogged = localStorage.getItem("token");
-    if(checkLogged !== null){
+    if(checkLogged !== null && !this.isTokenExpired(checkLogged)) { // modificare aici
       this.authService.isUserLogged$.next(true);
     } else {
       this.authService.isUserLogged$.next(false);

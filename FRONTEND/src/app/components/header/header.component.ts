@@ -16,8 +16,7 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    this.sticky = window.pageYOffset >= 1;
-    console.log(this.sticky);
+    this.sticky = window.pageYOffset >= 10;
   }
 
   public isMenuOpen: boolean = false;

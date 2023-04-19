@@ -1,0 +1,10 @@
+.about-section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-size: cover;
+    height: 150vh;
+    color: white;
+    z-index: 1;
+}

@@ -27,3 +27,4 @@ export class LoginComponent {
     this.authService.login({ name: this.loginForm.value.name, password: this.loginForm.value.password }).subscribe((message => console.log(message)));
   }
 }
+  
